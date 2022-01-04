@@ -19,14 +19,15 @@
 //@dyu
 #if defined(__aarch64__) || defined(_M_ARM64)
 #define HAVE_MM_PREFETCH 0
-#define HAVE_SSE42 0
 #else
 // Define to 1 if targeting X86 and the compiler has the _mm_prefetch intrinsic.
 #define HAVE_MM_PREFETCH 1
+#endif
+
+//@dyu TODO: enable
 // Define to 1 if targeting X86 and the compiler has the _mm_crc32_u{8,32,64}
 // intrinsics.
-#define HAVE_SSE42 1
-#endif
+#define HAVE_SSE42 0
 
 //@dyu TODO remove suffix? -> !defined(__APPLE__)
 #if (defined(__aarch64__) || defined(_M_ARM64)) && defined(__APPLE__)
