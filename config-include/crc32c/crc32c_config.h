@@ -30,12 +30,14 @@
 #define HAVE_SSE42 0
 
 //@dyu TODO remove suffix? -> !defined(__APPLE__)
+#if !defined(HAVE_ARM64_CRC32C)
 #if (defined(__aarch64__) || defined(_M_ARM64)) && defined(__APPLE__)
 // Define to 1 if targeting ARM and the compiler has the __crc32c{b,h,w,d} and
 // the vmull_p64 intrinsics.
 #define HAVE_ARM64_CRC32C 1
 #else
 #define HAVE_ARM64_CRC32C 0
+#endif
 #endif
 
 //@dyu TODO newer linux distributions have this
